@@ -10,12 +10,42 @@ const Productscren = () => {
  
     
   return (
-    <div>Productscren
+    <div>
+        <div className='row'>
+            <div className='col-md-6'>
+                <div className='card p-2 m-2'>
+                    <h1>{elemen.name}</h1>
+                    <img src={elemen.image} className='img-fluid m-3 bigimg' alt=''/>
+                    <p>{elemen.description}</p>
+
+                </div>
 
 
-        <h1> product id ={id} </h1>
+            </div>
+            <div className='col-md-6' text='left'>
+                <div className='m-2'>
+                    <h1>Price: {elemen.price}</h1>
+                    <hr/>
+                    <h1>Select Quantity</h1>
+                    <select>
+                    {[...Array(elemen.countInStock).keys()].map((x,i)=>{
+                        <option value={i+1}>{i+1}</option>
+                    })}
+                    </select>
+                    <hr/>
+                    <button className='btn btn-dark'>ADD TO CART</button>
+                   
+
+
+
+                </div>
+            </div>
+
+        </div>
+
         
-        <h1>{elemen.name}</h1>
+        
+        
     </div>
   )
 }

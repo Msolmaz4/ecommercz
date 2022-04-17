@@ -1,5 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import Rating from 'react-rating'
+
 
 const Product = ({data}) => {
   return (
@@ -10,8 +12,15 @@ const Product = ({data}) => {
     <img src={data.image} className="img-fluid" alt="" />
             <h1>{data.name}</h1>
 
-            <p>Rating:{data.rating}</p>
-            <p>Price: {data.price}</p>
+ 
+            <Rating
+  emptySymbol="fa fa-star-o fa-2x"
+  fullSymbol="fa fa-star fa-2x"
+/>
+
+ 
+
+       <p>Price: {data.price}</p>
     </Link>
             
           </div>
